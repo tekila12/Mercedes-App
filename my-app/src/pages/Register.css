@@ -1,0 +1,117 @@
+.Register {
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-family);
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.Register__button {
+  color: var(--color);
+  text-decoration: none;
+  font-family: var(--font-family);
+  background: #60a3bc;
+  padding: 12px;
+  border-radius: 50px;
+  display: inline-block;
+  font-weight: 700;
+  border: none;
+  transition: all 0.4s ease 0s;
+  margin: 1rem;
+  cursor: pointer;
+}
+
+.Register__button:hover {
+  text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+  -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  transition: all 0.4s ease 0s;
+}
+.Account__exist {
+  margin: 1rem;
+  font-family: var(--font-family);
+  font-size: 13px;
+  color: var(--color);
+  font-weight: 700;
+  margin-top: 0rem;
+}
+
+.Account__exist > a {
+  color: #60a3bc;
+}
+.Label__content {
+  margin-left: 0.8rem;
+  margin-bottom: 0.7rem !important;
+  color: var(--color);
+  font-family: var(--font-family);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.Text__danger {
+  color: red;
+  margin: 1rem;
+  font-weight: 900;
+  margin-bottom: 10px !important;
+}
+.Input__wrapper {
+  font-family: var(--font-family);
+  display: flex;
+  flex-direction: column;
+  margin: 0.7rem;
+  width: 19rem;
+  height: 2rem;
+  font-weight: 900;
+  padding: 0.2rem;
+}
+
+.Input__wrapper::placeholder {
+  margin-left: 0.4em;
+}
+/*
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--white);
+}
+*/
+
+.Modal {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: var(--background-color);
+  overflow-y: hidden;
+  overflow-x: hidden;
+  box-shadow: var(--box-shadow);
+  height: 400px;
+  width: 400px;
+  border-radius: 1rem;
+}
+.Overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--background);
+}
+
+.Login {
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-family);
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
