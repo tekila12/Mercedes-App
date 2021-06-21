@@ -4,12 +4,13 @@ import logging from './config/logging';
 import config from './config/config';
 import userRoutes from './routes/user';
 import mongoose from 'mongoose';
+import carsRoutes from './routes/cars';
 const NAMESPACE = 'Server';
 const router = express();
-import carsRouter from './routes/cars';
 
 
-router.use('./cars',carsRouter )
+
+
 mongoose
     .connect(config.mongo.url, config.mongo.options)
     .then((result) => {
@@ -50,6 +51,7 @@ router.use((req, res, next) => {
 });
 
 /** Routes go here */
+router.use('/cars',carsRoutes)
 router.use('/users', userRoutes);
 
 /** Error handling */

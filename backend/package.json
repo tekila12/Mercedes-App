@@ -6,7 +6,6 @@
   "scripts": {
     "build": "rm -rf build && prettier --write source/ && tsc"
   },
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tekila12/E-tech.git"
@@ -21,7 +20,6 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.12.13",
     "node-dev": "^7.0.0",
-    "nodemon": "^2.0.7",
     "prettier": "^2.3.0",
     "ts-node": "^10.0.0",
     "typescript": "^4.3.2"
