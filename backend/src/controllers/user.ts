@@ -4,6 +4,8 @@ import bcryptjs from 'bcryptjs';
 import mongoose from 'mongoose';
 import User from '../models/user';
 import signJWT from '../functions/signJWT';
+import Cars from '../models/cars'
+
 
 const NAMESPACE = 'User';
 
@@ -14,6 +16,8 @@ const validateToken = (req: Request, res: Response, next: NextFunction) => {
         message: 'Token(s) validated'
     });
 };
+
+
 
 const register = (req: Request, res: Response, next: NextFunction) => {
     let { username, password } = req.body;
@@ -109,4 +113,14 @@ const getAllUsers = (req: Request, res: Response, next: NextFunction) => {
         });
 };
 
-export default { validateToken, register, login, getAllUsers };
+
+/*
+const getAllCars = (req: Request, res: Response, next: NextFunction) => {
+    Cars.find()
+    .then((car: any)=> res.json(car))
+    .catch((err: any) => res.status(400).json(`Error: ${err}`))
+}
+
+*/
+
+export default { validateToken, register, login, getAllUsers, /*getAllCars */ };

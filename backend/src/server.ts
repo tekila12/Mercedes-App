@@ -51,7 +51,7 @@ router.use((req, res, next) => {
 });
 
 /** Routes go here */
-router.use('/cars',carsRoutes)
+router.use('/cars',carsRoutes);
 router.use('/users', userRoutes);
 
 /** Error handling */
@@ -62,8 +62,6 @@ router.use((req, res, next) => {
         message: error.message
     });
 });
-
-
 
 
 const httpServer = http.createServer(router);
