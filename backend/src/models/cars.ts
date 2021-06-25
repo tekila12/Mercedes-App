@@ -1,38 +1,38 @@
 import mongoose, { Schema } from 'mongoose';
-
 import ICars from '../interfaces/cars'
+
 const Exterior = new Schema({
-    image_one:{type:Number},
-    image_two:{type:Number},
-    image_three:{type:Number},
-    image_four:{type:Number},
+    image_one:{type:String},
+    image_two:{type:String},
+    image_three:{type:String},
+    image_four:{type:String},
 })
 
 const Interior = new Schema ({
-    image_one:{type:Number},
-    image_two:{type:Number},
-    image_three:{type:Number},
-    image_four:{type:Number},
+    image_one:{type:String},
+    image_two:{type:String},
+    image_three:{type:String},
+    image_four:{type:String},
 })
 
 const Performance = new Schema({
-    acceleration:{type:Number },
-    maximum_speed:{type:Number},
-    fuel_urban:{type:Number},
-    fuel_extra_urban:{type:Number},
-    fuel_combined:{type:Number},
+    acceleration:{type:String },
+    maximum_speed:{type:String},
+    fuel_urban:{type:String},
+    fuel_extra_urban:{type:String},
+    fuel_combined:{type:String},
 })
 
 const Volume = new Schema ({
-    max_weights:{type:Number},
-    fuel_tank:{type:Number},
+    max_weights:{type:String},
+    fuel_tank:{type:String},
 })
 
 
 const Specs = new Schema({
-    power:{type:Number},
-    power_per_litre:{type:Number},
-    torque:{type:Number},
+    power:{type:String},
+    power_per_litre:{type:String},
+    torque:{type:String},
     fuel_system:{type:String},
 
 })

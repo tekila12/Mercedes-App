@@ -11,8 +11,10 @@ router.get('/', (req:any, res:any )=>{
 })
 
 
-router.get('/car',(req:any, res:any)=>{
-    res.json({ hello: 'world'})
+router.get('/:id',(req:any, res:any)=>{
+    Cars.findById(req.params.id)
+    .then(car=>res.json(car))
+    .catch((err) => res.status(400).json(`Error: ${err}`))
 })
 
 

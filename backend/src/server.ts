@@ -9,8 +9,6 @@ const NAMESPACE = 'Server';
 const router = express();
 
 
-
-
 mongoose
     .connect(config.mongo.url, config.mongo.options)
     .then((result) => {
@@ -33,9 +31,11 @@ router.use((req, res, next) => {
     next();
 });
 
+
 /** Parse the body of the request */
 router.use(express.urlencoded({ extended: true }));
 router.use(express.json());
+
 
 /** Rules of our API */
 router.use((req, res, next) => {

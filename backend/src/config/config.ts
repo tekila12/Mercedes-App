@@ -14,7 +14,7 @@ const MONGO_OPTIONS = {
 
 const MONGO_USERNAME = process.env.MONGO_USERNAME || 'Ajnur';
 const MONGO_PASSWORD = process.env.MONGO_PASSWORD || 'Ajnur';
-const MONGO_HOST = process.env.MONGO_URL || `cluster0.lkgh5.mongodb.net/E-TECH?retryWrites=true&w=majority`;
+const MONGO_HOST = process.env.MONGO_URL || `cluster0.lkgh5.mongodb.net/cars?retryWrites=true&w=majority`;
 
 const MONGO = {
     host: MONGO_HOST,

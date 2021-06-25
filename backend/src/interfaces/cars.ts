@@ -23,24 +23,24 @@ interface BrandList {
 }
 
 interface Specs {
-    power:number ;
-    power_per_litre:number ;
-    torque:number;
+    power:string  ;
+    power_per_litre:string;
+    torque:string;
     fuel_system:string;
 }
 
 interface Volume {
-    max_weights:number;
-    fuel_tank:number;
+    max_weights:string;
+    fuel_tank:string;
 }
 
 
 interface Performance {
-    acceleration:number;
-    maximum_speed:number;
-    fuel_urban:number;
-    fuel_extra_urban:number;
-    fuel_combined:number ;
+    acceleration:string;
+    maximum_speed:string;
+    fuel_urban:string;
+    fuel_extra_urban:string;
+    fuel_combined:string ;
 }
 
 interface Interior {
