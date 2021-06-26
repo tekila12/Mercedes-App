@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { HomeProvider } from './contexts/home';
 ReactDOM.render(
   <React.StrictMode> 
-      <HomeProvider >
+    <HomeProvider >
     <BrowserRouter>  
       <Application />
     </BrowserRouter>

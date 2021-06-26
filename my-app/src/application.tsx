@@ -1,8 +1,7 @@
-import axios from 'axios';
-import Promise from "ts-promise";
 import React, { useEffect,  useState, Suspense } from 'react';
 import { Route,  BrowserRouter as Router, Switch, RouteComponentProps, useHistory } from 'react-router-dom';
-import Header from './components/Header'
+import axios from 'axios';
+import Promise from "ts-promise";import Header from './components/Header'
 import logging from './config/logging';
 import { UserContextProvider } from './contexts/user';
 import IUser from './interface/user';

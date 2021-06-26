@@ -64,4 +64,4 @@ export const HomeProvider:React.FC<IProps> = ({ children }  ) => {
   );
 }
 
-export { HomeContext,  };
+export { HomeContext  };
