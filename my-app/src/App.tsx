@@ -1,7 +1,7 @@
 import React, { useEffect,  useState, Suspense } from 'react';
-import { Route,  BrowserRouter as Router, Switch, RouteComponentProps, useHistory } from 'react-router-dom';
+import { Route,  BrowserRouter as Router, Switch, useHistory } from 'react-router-dom';
 import axios from 'axios';
-import Promise from "ts-promise";import Header from './components/Header'
+import Header from './components/Header'
 import logging from './config/logging';
 import { UserContextProvider } from './contexts/user';
 import IUser from './interface/user';
@@ -19,7 +19,7 @@ const Register = React.lazy(async () => {
     return import('./pages/SignIn');
   });
 
-const Application: React.FunctionComponent<{}> = props => {
+const App: React.FunctionComponent<{}> = props => {
     /** Application State Values */
     const [user, setUser] = useState<IUser|null>(null);
     const [token, setToken] = useState<string|null>(null);
@@ -123,8 +123,7 @@ const Application: React.FunctionComponent<{}> = props => {
     return (
         <div>
                
-                <UserContextProvider value={userContextValue}>            
-              
+                <UserContextProvider value={userContextValue}>                         
                 <Router>               
                   <Header />   
                      <Suspense fallback={<LoaderOne/>}>                     
@@ -134,12 +133,11 @@ const Application: React.FunctionComponent<{}> = props => {
                     <Route path ='/' component={Home} />            
                     </Switch>
                    </Suspense>
-                  </Router>
-                 
+                  </Router>               
                 </UserContextProvider>
                
         </div>
     );
 }
 
-export default Application;
+export default App;

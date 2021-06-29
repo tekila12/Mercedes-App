@@ -1,16 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import Application from './application';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { HomeProvider } from './contexts/home';
+import { CarsProvider } from './contexts/car';
 ReactDOM.render(
   <React.StrictMode> 
+    <CarsProvider>
     <HomeProvider >
     <BrowserRouter>  
-      <Application />
+      <App />
     </BrowserRouter>
     </HomeProvider>
+    </CarsProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

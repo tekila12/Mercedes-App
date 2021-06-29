@@ -1,31 +1,44 @@
 import React, {useState, useEffect}from 'react'
-import api from '../api/api';
 import ICars from '../interface/car';
+import axios from 'axios';
+import api from '../api/api';
 
-const CarsContext=  React.createContext(null)
+export const CarsContext=  React.createContext({})
+
+
+
+
 
 export const CarsProvider:React.FC = ({ children }  ) => {
 
 const [isLoading, setIsLoading] = useState(false);
 const [cars, setCars] =useState<ICars[]>([])
-const fetchData = async () => {
-  const response = await fetch('http://localhost:7000/cars')
-  const result = await response.json()
-  setCars(result)
-  console.log(result)
+const [isError, setIsError] = useState(false);
+    
+useEffect(()=>{
+  const fetchData = async () => {
+    setIsLoading(true);
+    const response = await api.get('/cars', {
+    });  
+    setIsLoading(false)
+    setCars([...response.data]);
+    console.log(response.data)
+  };
+   
 
-  }
- 
+    fetchData()
+},[])
 
-useEffect(() => {
-  fetchData()
-}, [])
+   
+
+
+
 
   return (
 
    
     <CarsContext.Provider
-      value={null}
+      value={{cars}}
     >
     <>
       {children}
@@ -34,8 +47,5 @@ useEffect(() => {
   );
 }
 
-export { CarsContext  };
 
-function result(result: any) {
-  throw new Error('Function not implemented.');
-}
+
