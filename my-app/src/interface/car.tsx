@@ -2,6 +2,8 @@
 
 export default interface ICars  {
     a_class: BrandList[],
+    b_class: BrandList[],
+
     }
     
     

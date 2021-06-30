@@ -1,34 +1,33 @@
-import React from 'react'
-import { useEffect } from 'react';
-import { useState } from 'react';
-import api from '../api/api';
-import ICars from '../interface/car';
+import React from "react";
+import { useContext } from "react";
+import { CarsContext } from "../contexts/car";
+import CarsDetails from "./CarsDetails";
 
 const Cars = () => {
+  const { cars, handleSelectBrand } = useContext(CarsContext);
 
-const [isLoading, setIsLoading] = useState(false);
-const [cars, setCars] =useState<ICars[]>([])
-const [isError, setIsError] = useState(false);
+  return (
+    <div>
+      {Object.keys(cars[0]).map((key: any, index) => {
+        let brand: any = cars[key];
+        return key;  
+        /*
+        return (
+          <div
+            key={key}
+            onClick={() => handleSelectBrand(key)}
+            className="brand__list"
+          >
+            {brand[0].brand}
+            <img src={brand[0].main_image} alt="" />
+          </div>
+        )
+        */
+      })}
 
-    
-useEffect(()=>{
-    const fetchData = async () => {
-      setIsLoading(true);
-      const response = await api.get('/cars', {
-      });  
-      setIsLoading(false)
-      setCars(response.data);
-      console.log(response.data)
-    };
-     
-  
-      fetchData()
-  },[])
-    return (
-        <div>
-            Cars
-        </div>
-    )
-}
+      <CarsDetails />
+    </div>
+  );
+};
 
-export default Cars
+export default Cars;
