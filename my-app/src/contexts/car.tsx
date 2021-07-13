@@ -2,7 +2,7 @@ import React, {useState, useEffect}from 'react'
 import ICars from '../interface/car';
 import axios from 'axios';
 import api from '../api/api';
-import { SetStateAction } from 'react';
+
 
 export const CarsContext=  React.createContext<Props>({
   setIsLoading: (value: boolean) => {},
@@ -33,7 +33,7 @@ declare module 'axios' {
 export const CarsProvider:React.FC <IProps> = ({ children }  ) => {
 
 const [isLoading, setIsLoading] = useState(false);
-const [cars, setCars] =useState< any | ICars[] >([])
+const [cars, setCars] =useState<any | ICars[] >([])
 const [brands, setBrands] = useState([])
 const [currentSelectedBrand, setCurrentSelectedBrand] = useState('')   
 
@@ -48,9 +48,17 @@ useEffect(()=>{
     });  
     setIsLoading(false)
     setCars([...response.data]);
-    setCurrentSelectedBrand(response[Object.keys(response)[0]]);
-    console.log(response.data)
+    const model=[];
+    for (const brand in response){
+      const booksWithCategory = response[brand].map((item: any) => ({
+        ...item,
+        brand,
+      }))
+     model.push(...booksWithCategory)
     
+    }
+    setCars(brands)
+    console.log(response.data)
   };
    
 
@@ -66,6 +74,9 @@ const myContextValue= React.useMemo(()=>({
   handleSelectBrand, brands, isLoading])
 
   return (
+
+
+
 
    
     <CarsContext.Provider

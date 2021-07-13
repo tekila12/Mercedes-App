@@ -10,8 +10,6 @@ const Cars = () => {
     <div>
       {Object.keys(cars[0]).map((key: any, index) => {
         let brand: any = cars[key];
-        return key;  
-        /*
         return (
           <div
             key={key}
@@ -22,7 +20,7 @@ const Cars = () => {
             <img src={brand[0].main_image} alt="" />
           </div>
         )
-        */
+        
       })}
 
       <CarsDetails />
